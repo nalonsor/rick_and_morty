@@ -1,0 +1,46 @@
+.wrapCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+@media screen and (max-width: 1600px) {
+
+    .wrapCards{
+        padding: 5% 5%;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .wrapCards{
+        padding: 5% 5%;
+    }
+
+}
+
+@media screen and (max-width: 1025px) {
+    
+    .wrapCards{
+        padding: 5% 5%;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    
+    .wrapCards{
+        padding: 25% 15% 15% 15%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    
+    .wrapCards{
+        padding: 25% 5% 15% 5%;
+    }
+
+}

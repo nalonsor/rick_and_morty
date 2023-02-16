@@ -1,0 +1,46 @@
+.nav{
+    background-color: rgba(0,0,0,.5);
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+
+.logoApp img{
+    height: 4em;
+    padding: .5em 2em;
+}
+
+.navLinks{
+    padding: 0em 2em;
+    display: flex;
+    gap: 1em;
+}
+
+.navLinks a{
+    background:#87953f;
+    border: solid .3em #10636c; 
+    border-radius: .5em;
+    color: #fff; 
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1em;
+    padding: .3em 1em .1em 1em;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+.navLinks a:hover{
+    background: #d4ff00;
+    border: solid .3em #12b0c9; 
+    color: #12b0c9;
+    transform: scale(1.1,1.1);
+    transition: all .5s ease;
+}

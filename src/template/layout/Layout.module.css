@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "customFont";
+    src: url("../../assets/fonts/LetterGothicStd.otf")
+}
+
+@font-face {
+    font-family: "customFont2";
+    src: url("../../assets/fonts/Overdrive_Sunset.otf")
+}
+
+
+.blur{
+    backdrop-filter: blur(10px);
+}
+
+body{
+    font-family: "customFont";
+    margin: 0px!important;
+}
+
+.layout{
+    margin: 0px;
+    background-color: black;
+    background-image: url('../../assets/img/bk3.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-width: 360px;
+}
+
+.wrapApp{
+    background-color: rgba(0,0,0,.3);
+    min-height: 100vh;
+}
+
+.footer{
+    font-family: "customFont";
+    background-color: rgba(0,0,0,.4);
+    bottom: 0;
+    color: rgba(238, 255, 0, 1);
+    padding: 5px 10px;
+    position: fixed;
+}
+
+.wrapContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 8em 0em;
+}
+
+.footer a{
+    color: rgba(238, 255, 0, 1);
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: rgb(255, 255, 255);
+}
+
+h1{
+    background: rgba(0,0,0,0.5);
+    color: #eaff00;
+    font-size: 3em;
+    padding: .5em;
+    transform: rotate(3deg);
+    backdrop-filter: blur(10px);
+    margin-bottom: 0em;
+    text-shadow: 2px 2px #00c8ff;
+}
+

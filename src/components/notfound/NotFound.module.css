@@ -1,0 +1,39 @@
+.wrap404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card404{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.card404 img{
+    margin: 0em auto;
+    width: 25em;
+    border-radius: 50%;
+}
+
+.btnBack{
+    padding: .3em 1em;
+    background: #87953f;
+    border: solid #10636c .3em;
+    border-radius: .3em;
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    z-index: 997;
+    transform: rotate(-3deg);
+}
+
+.btnBack:hover{
+    border-color: #12b0c9;
+    background-color: #d4ff00;
+    color: #12b0c9;
+    transform: scale(1.1,1.1);
+}
