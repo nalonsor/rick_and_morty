@@ -16,8 +16,10 @@ export default function Cards(props) {
                                        species={character.species}
                                        gender={character.gender}
                                        image={character.image} 
+                                       character={character} 
                                        onClose={ onClose } 
                                        onDelete={ onDelete } 
+                                       visibleClose={ true }
                                     />)
       }
    </div>;

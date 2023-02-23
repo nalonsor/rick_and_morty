@@ -1,0 +1,95 @@
+.wrapLogo{
+    width: 100%;
+    text-align: center;
+}
+.logoAppLogin{
+    margin: 0em auto 7em auto;
+    width: 15em;
+}
+
+.loginForm{
+    background: rgba(0,0,0,.3);
+    backdrop-filter: blur(10px);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    width: 25em;
+    gap: 1em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.loginForm .avatar{
+    /*background: radial-gradient(circle, rgb(8, 8, 8) 0%, rgba(252,70,107,0) 60%);*/
+    /*box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;*/
+    margin-top: -10em;
+    margin-bottom: -2em;
+    width: 12em;
+}
+
+.loginForm .hint{
+    background-color: rgb(203, 115, 0);
+    font-weight: bold;
+    text-align: center;
+    padding: .5em;
+    border-radius: 1em;
+}
+
+.loginForm .formGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    color: chartreuse;
+    width: 100%;
+}
+
+.loginForm input{
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid .3em #10636c; /*rgba(102, 255, 0, 0.5);*/
+    color: #fff;
+    font-size: 1.2em;
+    padding: 1em;
+    text-align: center;
+    width: 90%;
+}
+
+.loginForm input:focus { 
+    outline: none !important;
+    border-color: #12b0c9;
+    /* box-shadow: 0 0 10px #0dff00; */
+ }
+
+.loginForm .error{
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: .5em;
+    border: solid 1px crimson;
+    font-weight: bold;
+    padding: .5em;
+    margin: .5em 0em;
+    color: crimson;
+    text-align: center;
+}
+
+.loginForm button{
+    font-family: "customFont";
+    border: solid .3em #10636c;
+    color: #10636c;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: .5em 1.5em;
+    background: #87953f;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.loginForm button:hover{
+    border-color: #12b0c9;
+    background-color: #d4ff00;
+    color: #12b0c9;
+    transform: scale(1.1,1.1);
+}

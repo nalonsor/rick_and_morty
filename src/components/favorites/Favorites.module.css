@@ -1,0 +1,23 @@
+.wrapCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    width: 100%;
+}
+
+.filters{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.filters select{
+    background-color: rgba(0,0,0,.5);
+    border: solid .3em #10636c;
+    color: #fff;
+    font-size: 1.5em;
+    padding: .5em 1em;
+    border-radius: 1em;
+}

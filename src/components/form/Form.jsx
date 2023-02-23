@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from './Form.module.css';
 import { validateUsername, validatePassword }  from './validations';
+import Logo from '../../assets/img/logoApp.png';
+import Avatar from '../../assets/img/rick_login.png';
 
 export default function Form({ login }) {
 
@@ -37,13 +39,25 @@ export default function Form({ login }) {
 
     return(
         <div className={ styles.wrapContent }>
+            
+            <div className={styles.wrapLogo}>
+                <img 
+                    src={Logo} 
+                    className={styles.logoAppLogin} alt="Rick_And_Morty_Logo_App" 
+                />
+            </div>
 
-            <form autoComplete="off" onSubmit={ handleSubmit }>
-                <div className="hint">
-                    Please use the suggestion data for username and password to login. thanks!
+            <form className={styles.loginForm} autoComplete="off" onSubmit={ handleSubmit }>
+                <img 
+                    className={styles.avatar}
+                    src={Avatar} 
+                    alt="Login_avatar" 
+                />
+                <div className={styles.hint}>
+                    Please use the suggestion data for username and password to login. Thanks!
                 </div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Username:</label>
                     <input 
                         type="text" 
                         id="username" 
@@ -53,11 +67,17 @@ export default function Form({ login }) {
                         onChange={ handleChange }
                         value={ userData.username }
                     />
-                    <span id="errorUsername">{ error.username }</span>
+                    {
+                        error.username &&
+                        <span 
+                            className={styles.error} 
+                            id="errorUsername"
+                        >{ error.username }</span>
+                    }
                 </div>
 
                 <div className={styles.formGroup}>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password:</label>
                     <input 
                         type="password" 
                         id="password" 
@@ -67,7 +87,13 @@ export default function Form({ login }) {
                         onChange={ handleChange }
                         value={ userData.password }
                     />
-                    <span id="errorPassword">{ error.password }</span>
+                    {
+                        error.password &&
+                        <span 
+                            className={styles.error} 
+                            id="errorPassword"
+                        >{ error.password }</span>
+                    }
                 </div>
 
                 <button> Login </button>

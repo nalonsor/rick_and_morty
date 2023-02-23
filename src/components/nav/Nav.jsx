@@ -16,14 +16,14 @@ class Nav extends React.Component {
         return(
             <div className={styles.nav}>
                 <div className={styles.logoApp}>
-                    <NavLink to="/characters">
+                    <NavLink to="/home">
                         <img src={Logo} alt="Rick & Morty app"/>
                     </NavLink>
                 </div>
                 <SearchBar onSearch={ this.props.onSearch } />
                 <div className={styles.navLinks}>
+                    <NavLink to="/favorites" end> Favorites </NavLink>
                     <NavLink to="/about" end> About </NavLink>
-                    <NavLink to="/contact" end> Contact </NavLink>
                 </div>
             </div>
         )

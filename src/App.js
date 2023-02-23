@@ -6,6 +6,7 @@ import About from './components/about/About.jsx';
 import Detail from './components/detail/Detail.jsx';
 import NotFound from "./components/notfound/NotFound";
 import Form from './components/form/Form.jsx';
+import Favorites from './components/favorites/Favorites';
 
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
@@ -65,6 +66,7 @@ function App() {
         <Route path="/characters" element={<Cards characters={ characters } onDelete={ onDelete } />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path='*' element={<NotFound />}/>
 
       </Routes>

@@ -13,7 +13,7 @@ export default function Detail() {
     const navigate = useNavigate();
 
     const backToHome = () => {
-        navigate("/");
+        navigate("/home");
     }
 
     useEffect(() => {
