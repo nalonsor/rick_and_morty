@@ -1,0 +1,19 @@
+.btn{
+    padding: .3em 1em;
+    background: #87953f;
+    color: #fff;
+    border: solid #10636c .3em;
+    border-radius: .3em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    z-index: 997;
+}
+
+.btn:hover{
+    border-color: #12b0c9;
+    background-color: #d4ff00;
+    color: #12b0c9;
+    transform: scale(1.1,1.1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 10px, rgba(0, 0, 0, 0.22) 0px 5px 4px;
+}

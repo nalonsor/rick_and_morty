@@ -13,17 +13,20 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 function App() {
 
   const [characters, setCharacters] = useState([]);
+  const [erroLogin, setErrorLogin] = useState('');
   const location = useLocation();
 
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  const username = 'jhon@doe.com';
+  const username = 'mail@gmail.com';
   const password = 'Secret33';
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate('/home');
+    }else{
+      setErrorLogin('* User or password incorrect');
     }
   }
 
@@ -61,7 +64,7 @@ function App() {
         }
       <Routes>
 
-        <Route path="/" element={<Form login={ login } />} />
+        <Route path="/" element={<Form login={ login } errorLogin={erroLogin} />} />
         <Route path="/home" element={<Cards characters={ characters } onDelete={ onDelete } />} />
         <Route path="/characters" element={<Cards characters={ characters } onDelete={ onDelete } />} />
         <Route path="/about" element={<About />} />

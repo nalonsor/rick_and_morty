@@ -4,7 +4,7 @@ import { validateUsername, validatePassword }  from './validations';
 import Logo from '../../assets/img/logoApp.png';
 import Avatar from '../../assets/img/rick_login.png';
 
-export default function Form({ login }) {
+export default function Form({ login, errorLogin }) {
 
     const [userData, setUserData] = React.useState({ username: '', password: '' });
     const [error, setError] = React.useState({
@@ -13,24 +13,29 @@ export default function Form({ login }) {
     });
 
     const handleChange = (e) => {
-        setUserData({...userData, [e.target.name]: e.target.value });
         if(e.target.name === 'username'){
             setError({
                 ...error,
                 username: validateUsername(e.target.value),
             });
-        }
-
-        if(e.target.name === 'password'){
+        }else if(e.target.name === 'password'){
             setError({
                 ...error,
                 password: validatePassword(e.target.value),
             });
+        }else{
+            setError({
+                username: validateUsername(userData.username),
+                password: validatePassword(userData.password),
+            });
+            return;
         }
+        setUserData({...userData, [e.target.name]: e.target.value });
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(error.username !== '' && error.password !== '') return;
         login(userData);
     }
 
@@ -54,15 +59,14 @@ export default function Form({ login }) {
                     alt="Login_avatar" 
                 />
                 <div className={styles.hint}>
-                    Please use the suggestion data for username and password to login. Thanks!
+                    Please use "mail@gmail.com" and "Secret33". Thanks!
                 </div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="username">Username:</label>
                     <input 
                         type="text" 
                         id="username" 
                         name="username" 
-                        placeholder="jhon@doe.com"
+                        placeholder="Username"
                         autoComplete="off"
                         onChange={ handleChange }
                         value={ userData.username }
@@ -77,12 +81,11 @@ export default function Form({ login }) {
                 </div>
 
                 <div className={styles.formGroup}>
-                    <label htmlFor="password">Password:</label>
                     <input 
                         type="password" 
                         id="password" 
                         name="password" 
-                        placeholder="Secret33"
+                        placeholder="Password" 
                         autoComplete="new-password"
                         onChange={ handleChange }
                         value={ userData.password }
@@ -94,9 +97,18 @@ export default function Form({ login }) {
                             id="errorPassword"
                         >{ error.password }</span>
                     }
+
+                    {
+                        errorLogin &&
+                        <span 
+                            className={styles.error} 
+                            id="errorPassword"
+                        >{ errorLogin }</span>
+                    }
                 </div>
 
-                <button> Login </button>
+                <button onClick={handleChange}> Login </button>
+        
 
             </form>
 

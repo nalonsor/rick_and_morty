@@ -1,34 +1,51 @@
-import React from "react";
-import SearchBar from '../searchbar/SearchBar';
-
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useLocation } from "react-router-dom";
 import styles from './Nav.module.css';
 import Logo from '../../assets/img/logoApp.png';
+import Avatar from '../../assets/img/rick_login.png';
 
-class Nav extends React.Component {
+export default function Nav() {
 
-    constructor(props) {
-        super();
-    }
+    const location = useLocation();
 
-    render(){
-        return(
-            <div className={styles.nav}>
-                <div className={styles.logoApp}>
-                    <NavLink to="/home">
-                        <img src={Logo} alt="Rick & Morty app"/>
-                    </NavLink>
-                </div>
-                <SearchBar onSearch={ this.props.onSearch } />
-                <div className={styles.navLinks}>
-                    <NavLink to="/favorites" end> Favorites </NavLink>
-                    <NavLink to="/about" end> About </NavLink>
-                </div>
+    return(
+        <div className={styles.nav}>
+            <div className={styles.logoApp}>
+                <NavLink to="/home">
+                    <img src={Logo} alt="Rick & Morty app"/>
+                </NavLink>
             </div>
-        )
-    }
+            {/* <SearchBar onSearch={ this.props.onSearch } /> */}
+            <div className={ styles.navLinks}>
+                <NavLink 
+                    className={ location.pathname === '/home' && styles.active }
+                    to="/home" 
+                    end
+                > Home </NavLink>
+                <NavLink 
+                    className={ location.pathname === '/favorites' && styles.active }
+                    to="/favorites" 
+                    end
+                > Favorites </NavLink>
+                <NavLink 
+                    className={ location.pathname === '/about' && styles.active }
+                    to="/about" 
+                    end
+                > About </NavLink>
+            </div>
+            <div className={styles.user}>
+                <img 
+                    src={Avatar} 
+                    alt="user_avatar" 
+                    className={styles.avatar}    
+                />
+                <NavLink 
+                    className={styles.btnLogout}
+                    to="/"
+                >
+                    Logout
+                </NavLink>
+            </div>
+        </div>
+    )
 
 }
-
-export default Nav;

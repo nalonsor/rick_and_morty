@@ -13,6 +13,10 @@
     backdrop-filter: blur(10px);
 }
 
+htm{
+    font-size: 14px;
+}
+
 body{
     font-family: "customFont";
     margin: 0px!important;
@@ -31,6 +35,9 @@ body{
 }
 
 .wrapApp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0,0,0,.3);
     min-height: 100vh;
 }
@@ -40,7 +47,7 @@ body{
     background-color: rgba(0,0,0,.4);
     bottom: 0;
     color: rgba(238, 255, 0, 1);
-    padding: 5px 10px;
+    padding: .4rem .7rem;
     position: fixed;
 }
 
@@ -49,7 +56,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 8em 0em;
+    /*padding: 8rem 0rem;*/
 }
 
 .footer a{
@@ -64,11 +71,11 @@ body{
 h1{
     background: rgba(0,0,0,0.5);
     color: #eaff00;
-    font-size: 3em;
-    padding: .5em;
+    font-size: 3rem;
+    padding: .5rem;
     transform: rotate(3deg);
     backdrop-filter: blur(10px);
-    margin-bottom: 0em;
+    margin-bottom: 0rem;
     text-shadow: 2px 2px #00c8ff;
 }
 

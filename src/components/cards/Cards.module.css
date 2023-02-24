@@ -2,7 +2,17 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 4rem;
+    /* width: 100%; */
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
+
+.wrapPagination{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: center;
     width: 100%;
 }
 

@@ -10,8 +10,8 @@
 
 .form input, .form button{
     font-family: "customFont";
-    border: solid .3em #10636c; /*rgba(102, 255, 0, 0.5);*/
-    /*border: none;*/
+    /*border: solid .3rem #10636c; /*rgba(102, 255, 0, 0.5);*/
+    border: none;
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 1.5em;
@@ -25,6 +25,7 @@
     border-radius: 25px 0px 0px 25px;
     width: 50%;
     padding-top: .3em;
+    transition: all 0.5s ease;
 }
 
 .form button{
@@ -40,11 +41,16 @@
     border-radius: 0px 25px 25px 0px;
     background-color: #d4ff00;
     color: #12b0c9;
-    transform: scale(1.1,1.1);
+    /*transform: scale(1.1,1.1);*/
 }
 
 .form input:focus { 
     outline: none !important;
     border-color: #12b0c9;
+    background-color: rgba(0, 0, 0, 0.5);
     /* box-shadow: 0 0 10px #0dff00; */
+ }
+
+.form input:hover{ 
+    background-color: rgba(0, 0, 0, 0.5);
  }

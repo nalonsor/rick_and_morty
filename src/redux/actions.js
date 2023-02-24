@@ -1,10 +1,20 @@
+import axios from 'axios';
+
 import { 
+    GET_CHARACTERS,
     ADD_FAVORITE, 
     REMOVE_FAVORITE, 
     GET_FAVORITES, 
     FILTER, 
     ORDER 
 } from './types';
+
+export const getCharacters = (page) => {
+    return async (dispatch) => {
+        const resp = await axios.get(`https://rickandmortyapi.com/api/character/?page=${page}`);
+        return dispatch({ type: GET_CHARACTERS, payload: resp.data.results });
+    }
+}
 
 export function addFavorite(character) {
     return { type: ADD_FAVORITE, payload: character };

@@ -1,19 +1,22 @@
 .wrapCard{
-    width: 20%;
+    width: 15%;
 }
 
 .card{
     /*background-color: rgba(255,255,255,.3);*/
-    min-width: 18em;
+    /* min-width: 15em; */
+    width: 15em;
     background-color: rgba(0,0,0,.1);
     backdrop-filter: blur(10px);
     font-family: 'customFont';
+    font-size: 1em;
     margin: 0em;
     padding: 1em;
     border-radius: 1em;
     transition: all 0.5s ease;
     color: #fff;
     overflow: hidden;
+    z-index: 99999;
 }
 
 .card:hover{
@@ -29,7 +32,7 @@
 
 .card img{
     display: block;
-    width: 70%;
+    width: 80%;
     filter: grayscale(80%);
     height: auto;
     border-radius: 50%;
@@ -63,7 +66,7 @@
 .card h2{
     text-align: center;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .card h3{
@@ -75,7 +78,7 @@
 }
 
 .card a{
-    font-size: 1.5em;
+    font-size: 1rem;
     font-weight: bold;
     line-height: 1em;
     margin: 1em;
@@ -168,12 +171,28 @@
 
     .wrapCard{
         padding: 0em;
+        width: 20%;
+    }
+
+}
+
+@media screen and (max-width: 1250px) {
+    
+    .wrapCard{
+        width: 25%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .wrapCard{
         width: 30%;
     }
 
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 880px) {
     
     .wrapCard{
         width: 40%;
@@ -181,18 +200,10 @@
 
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 705px) {
     
     .wrapCard{
-        width: 50%;
-    }
-
-}
-
-@media screen and (max-width: 700px) {
-    
-    .wrapCard{
-        width: 100%;
+        width: 45%;
     }
 
 }
