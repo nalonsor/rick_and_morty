@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 import { 
+    ON_SEARCH,
+    DELETE_CHARACTER,
     GET_CHARACTERS,
     ADD_FAVORITE, 
     REMOVE_FAVORITE, 
@@ -8,6 +10,25 @@ import {
     FILTER, 
     ORDER 
 } from './types';
+
+
+export const onSearch = (id) => {
+
+    return async (dispatch) => {
+        await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
+        .then(resp => dispatch({ type: ON_SEARCH, payload: resp.data }))
+        .catch(err => {
+            console.log(err.message);
+            window.alert('character not found');
+        })
+
+    }
+
+}
+
+export const deleteCharacter = (id) => {
+    return ({ type: DELETE_CHARACTER, payload: id });
+}
 
 export const getCharacters = (page) => {
     return async (dispatch) => {

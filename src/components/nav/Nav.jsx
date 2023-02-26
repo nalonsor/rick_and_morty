@@ -1,11 +1,19 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, Link } from "react-router-dom";
 import styles from './Nav.module.css';
 import Logo from '../../assets/img/logoApp.png';
 import Avatar from '../../assets/img/rick_login.png';
+import SearchBar from "../searchbar/SearchBar";
+
 
 export default function Nav() {
 
     const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/');
+    }
 
     return(
         <div className={styles.nav}>
@@ -14,7 +22,7 @@ export default function Nav() {
                     <img src={Logo} alt="Rick & Morty app"/>
                 </NavLink>
             </div>
-            {/* <SearchBar onSearch={ this.props.onSearch } /> */}
+            <SearchBar />
             <div className={ styles.navLinks}>
                 <NavLink 
                     className={ location.pathname === '/home' && styles.active }
@@ -38,12 +46,13 @@ export default function Nav() {
                     alt="user_avatar" 
                     className={styles.avatar}    
                 />
-                <NavLink 
+                <Link
                     className={styles.btnLogout}
+                    onClick={ handleLogout }
                     to="/"
                 >
                     Logout
-                </NavLink>
+                </Link>
             </div>
         </div>
     )

@@ -15,6 +15,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [erroLogin, setErrorLogin] = useState('');
   const location = useLocation();
+  let token = localStorage.getItem('token');
 
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
@@ -23,6 +24,7 @@ function App() {
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
+      localStorage.setItem('token', 'rickAndMortyToken');
       setAccess(true);
       navigate('/home');
     }else{
@@ -30,37 +32,25 @@ function App() {
     }
   }
 
-  const onSearch = (id) => {
-    // checck doubles
-    let duplicated = characters.filter(character => character.id === parseInt(id));
-    if (duplicated.length > 0) {
-      window.alert('Ya existe un personaje con ese ID');
-      return;
-    }
-
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-         if (data.name) {
-            setCharacters((oldChars) => [data, ...oldChars]);
-         } else {
-            window.alert('No hay personajes con ese ID');
-         }
-      });
-  }
-
   const onDelete = (id) => {
     setCharacters((oldChars) => oldChars.filter(character => character.id!== parseInt(id)));
   }
 
   useEffect(() => {
+    if(token === 'rickAndMortyToken'){
+      setAccess(true);
+      navigate('/home');
+    }
+
     !access && navigate('/');
-  }, [access, navigate]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <Layout>
         {
-          location.pathname !== '/' && <Nav onSearch={ onSearch } />
+          //location.pathname !== '/' && <Nav onSearch={ onSearch } />
+          location.pathname !== '/' && <Nav />
         }
       <Routes>
 

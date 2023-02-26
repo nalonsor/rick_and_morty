@@ -1,25 +1,26 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Card from './Card';
-import generalStyles from '../../assets/styles/GeneralStyles.module.css';
+// import generalStyles from '../../assets/styles/GeneralStyles.module.css';
 import styles from './Cards.module.css';
-import { getCharacters } from '../../redux/actions';
+// import { getCharacters } from '../../redux/actions';
 
 export default function Cards(props) {
 
-   const dispatch = useDispatch();
+   //const dispatch = useDispatch();
 
    const { onDelete } = props;
-   const [ page, setPage ] = useState(1);
+   //const [ page, setPage ] = useState(1);
 
-   const characters = useSelector(state => state.characters);
+   const characters = useSelector(state => state.searchedCharacters);
 
-   useEffect(() => {
+   /*useEffect(() => {
       dispatch(getCharacters(page));
-   },[page]);
+   },[page]);*/
 
    return <div className={styles.wrapCards}>
 
+      {/* 
       <div className={styles.wrapPagination}>
          <button 
             className={generalStyles.btn}
@@ -36,6 +37,7 @@ export default function Cards(props) {
             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
          </button>
       </div>
+      */}
 
       {
          characters.map(character => <Card 

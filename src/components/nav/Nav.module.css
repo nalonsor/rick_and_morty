@@ -29,7 +29,7 @@
     border: solid .3rem #10636c;*/ 
     border-radius: .5em;
     color: #fff; 
-    font-size: 1.5em;
+    font-size: 1rem;
     font-weight: bold;
     line-height: 1em;
     padding: .3em 1em .1em 1em;
@@ -82,7 +82,7 @@
 }
 
 .user a{
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #d4ff00;
     text-decoration: none;
 }

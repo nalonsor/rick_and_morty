@@ -3,15 +3,15 @@ import styles from './Card.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addFavorite, removeFavorite} from '../../redux/actions';
+import { addFavorite, removeFavorite, deleteCharacter} from '../../redux/actions';
 
 export default function Card(props) {
 
    const dispatch = useDispatch();
    const [isFav, setIsFav] = useState(false);
-   const { onDelete, id, name,species,gender,image, visibleClose } = props;
+   const { id, name,species,gender,image, visibleClose } = props;
 
-   let myFavs = useSelector(state => state.myfavorites) ;
+   let myFavs = useSelector(state => state.allCharacters) ;
 
    useEffect(() => {
       //dispatch(fetchFavorites());
@@ -20,11 +20,11 @@ export default function Card(props) {
             setIsFav(true);
          }
       });
-      console.log('dispatch');
    },[myFavs,id]);
 
    const handleDelete = () => {
-      onDelete(id);
+      //onDelete(id);
+      dispatch(deleteCharacter(id));
    }
 
    const handleFav = () => {

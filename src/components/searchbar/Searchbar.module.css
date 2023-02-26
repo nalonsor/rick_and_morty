@@ -14,10 +14,10 @@
     border: none;
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1rem;
     font-weight: bold;
-    height: 50px;
-    padding: 0px 1em;
+    height: 3rem;
+    padding: 0px 1.5em;
     text-align: center;
 }
 

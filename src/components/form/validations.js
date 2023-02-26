@@ -16,7 +16,7 @@ export function validateUsername (username){
 }
 
 export function validatePassword(password){
-    console.log(password,password.length);
+    // console.log(password,password.length);
     if(password.length < 6 || password.length > 10){
         return '* Password must be between 6 and 10 characters';
     }
