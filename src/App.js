@@ -15,7 +15,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [erroLogin, setErrorLogin] = useState('');
   const location = useLocation();
-  let token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
 
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
@@ -44,7 +44,7 @@ function App() {
 
     !access && navigate('/');
     // eslint-disable-next-line
-  }, []);
+  }, [token,access]);
 
   return (
     <Layout>
