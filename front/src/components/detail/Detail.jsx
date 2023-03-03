@@ -1,39 +1,25 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector  } from "react-redux";
+
+import { getCharacterDetail } from '../../redux/actions';
 
 import styles from "./Detail.module.css";
 
 export default function Detail() {
 
     const { id } = useParams();
-    const [ character, setCharacter ] = useState({});
-    const [ origin, setOrigin ] = useState({});
-    const [location, setLocation ] = useState({});
 
+    const character = useSelector(state => state.char);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const backToHome = () => {
         navigate("/home");
     }
 
     useEffect(() => {
-
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-            .then((response) => response.json())
-            .then((char) => {
-            if (char.name) {
-                setCharacter(char);
-                setOrigin(char.origin);
-                setLocation(char.location);
-            } else {
-                window.alert("No hay personajes con ese ID");
-            }
-            })
-            .catch((err) => {
-            window.alert("No hay personajes con ese ID");
-            });
-        return setCharacter({});
-
+        dispatch(getCharacterDetail(id));
     }, [id]);
 
 
@@ -51,8 +37,8 @@ export default function Detail() {
                     <p>Status: <span>{character.status}</span></p>
                     <p>Especie: <span>{character.species}</span></p>
                     <p>Gender: <span>{character.gender}</span></p>
-                    <p>Origin: <span>{origin.name}</span></p>
-                    <p>Location: <span>{location.name}</span></p>
+                    <p>Origin: <span>{character.origin}</span></p>
+                    <p>Location: <span>{character.name}</span></p>
                 </div>
             </div>
         </div>

@@ -11,8 +11,8 @@ export default function Cards(props) {
    const characters = useSelector(state => state.myfavorites);
 
    useEffect(() => {
-      dispatch(fetchFavorites)
-   },[characters,dispatch]);
+      dispatch(fetchFavorites())
+   },[]);
 
    const handleChangeOrder = (e) => {
       dispatch(orderCards(e.target.value));

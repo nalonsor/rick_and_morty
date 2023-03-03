@@ -1,5 +1,6 @@
 import { 
   ON_SEARCH,
+  GET_CHARACTER_DETAIL,
   DELETE_CHARACTER,
   GET_CHARACTERS, 
   ADD_FAVORITE, 
@@ -10,6 +11,7 @@ import {
 } from './types';
 
 const initialState = {
+  char: {},
   characters: [],
   myfavorites: [],
   allCharacters: [],
@@ -33,6 +35,11 @@ const reducer = (state = initialState, action) => {
         char: payload,
         searchedCharacters: [payload, ...state.searchedCharacters]
       }
+    case GET_CHARACTER_DETAIL:
+      return {
+      ...state,
+        char: payload,
+      }
     case DELETE_CHARACTER:
       console.log(payload);
       return {
@@ -53,8 +60,8 @@ const reducer = (state = initialState, action) => {
     case REMOVE_FAVORITE:
       return {
        ...state,
-        myfavorites: state.myfavorites.filter(favorite => favorite.id !== payload),
-        allCharacters: state.allCharacters.filter(favorite => favorite.id !== payload)
+        myfavorites: payload,
+        allCharacters: payload
       }
     case FILTER:
       if(payload === 'allGenders'){
@@ -82,6 +89,11 @@ const reducer = (state = initialState, action) => {
         }
       }
     case GET_FAVORITES:
+      return {
+        ...state,
+        myfavorites: payload,
+        allCharacters: payload,
+      }
 	  default:
 	    return {...state}
   }
